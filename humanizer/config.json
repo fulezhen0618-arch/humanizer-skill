@@ -1,0 +1,94 @@
+{
+  "skill_name": "Humanizer",
+  "skill_version": "1.0.0",
+  "skill_description": "Transform AI-generated content into natural, human-like text",
+  "author": "fulezhen0618-arch",
+  "license": "MIT",
+  "humanizer": {
+    "enabled": true,
+    "remove_ai_patterns": true,
+    "preserve_logic": true,
+    "preserve_code_functionality": true,
+    "preserve_factual_accuracy": true,
+    "preserve_structure": false,
+    "enhance_readability": true,
+    "remove_redundancy": true,
+    "adapt_tone": true,
+    "add_personality": true
+  },
+  "tone_options": [
+    "natural",
+    "professional",
+    "casual",
+    "engaging",
+    "technical"
+  ],
+  "default_configuration": {
+    "default_tone": "natural",
+    "default_content_type": "general",
+    "target_audience": "general",
+    "max_transformations": 1,
+    "min_change_threshold": 0.1,
+    "max_change_threshold": 0.5
+  },
+  "content_types": [
+    "readme",
+    "documentation",
+    "email",
+    "academic",
+    "code_comment",
+    "code_documentation",
+    "social_media",
+    "marketing",
+    "blog",
+    "report",
+    "general"
+  ],
+  "ai_pattern_detection": {
+    "enabled": true,
+    "pattern_file": "ai_patterns.json",
+    "sensitivity": "high"
+  },
+  "processing_options": {
+    "preserve_whitespace": true,
+    "preserve_formatting": true,
+    "preserve_code_indentation": true,
+    "preserve_markdown_syntax": true,
+    "preserve_special_characters": true
+  },
+  "quality_checks": {
+    "verify_meaning_preserved": true,
+    "verify_no_information_lost": true,
+    "verify_code_logic_unchanged": true,
+    "verify_factual_accuracy": true,
+    "verify_tone_appropriate": true
+  },
+  "supported_languages": [
+    "English"
+  ],
+  "supported_file_types": [
+    "markdown",
+    "text",
+    "python",
+    "javascript",
+    "java",
+    "cpp",
+    "csharp",
+    "go",
+    "rust",
+    "typescript",
+    "html",
+    "css",
+    "json"
+  ],
+  "performance": {
+    "max_content_length": 10000,
+    "processing_timeout": 30,
+    "batch_processing": true
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "output_file": "humanizer.log"
+  }
+}
