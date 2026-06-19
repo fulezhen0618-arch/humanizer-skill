@@ -1,0 +1,266 @@
+# Humanizer Skill - Core Instructions
+# Version: 1.0.0
+
+skill_name: "Humanizer"
+skill_version: "1.0.0"
+skill_description: "Transform AI-generated content into natural, human-like text"
+
+# Core Processing Rules
+core_rules:
+  - name: "Preserve Original Meaning"
+    description: "Never change the fundamental meaning or intent of the content"
+    priority: CRITICAL
+    
+  - name: "Remove AI Patterns"
+    description: "Eliminate robotic phrases and AI-generated templates"
+    priority: HIGH
+    examples:
+      - "state-of-the-art" → "modern" or "latest"
+      - "comprehensive implementation" → "full implementation"
+      - "facilitate enhanced processing" → "improve processing"
+      - "aforementioned" → remove or rephrase with "that"
+      - "in order to" → "to"
+      - "it is noteworthy that" → direct statement
+      - "take into consideration" → "consider"
+      - "manifest" → "show" or "display"
+  
+  - name: "Preserve Code Logic"
+    description: "For code content, preserve all logic and functionality"
+    priority: CRITICAL
+    applies_to: ["code", "code_comments", "code_documentation"]
+    
+  - name: "Enhance Readability"
+    description: "Improve flow, clarity, and natural language structure"
+    priority: HIGH
+    
+  - name: "Adapt Tone Appropriately"
+    description: "Match tone to context and target audience"
+    priority: MEDIUM
+
+# Tone Profiles
+tones:
+  professional:
+    characteristics:
+      - Clear and business-like
+      - Formal but not stuffy
+      - Direct and to the point
+      - Authoritative but friendly
+    avoid: Slang, colloquialism, excessive casual language
+    
+  casual:
+    characteristics:
+      - Conversational and relaxed
+      - Friendly and approachable
+      - Natural spoken English
+      - Personal touch
+    avoid: Overly formal language, corporate jargon
+    
+  engaging:
+    characteristics:
+      - Compelling and interesting
+      - Emotive and relatable
+      - Action-oriented
+      - Storytelling elements
+    avoid: Dry language, passive voice
+    
+  technical:
+    characteristics:
+      - Precise and accurate
+      - Industry-appropriate terminology
+      - Structured and logical
+      - Detail-focused
+    avoid: Oversimplification, vague language
+    
+  natural:
+    characteristics:
+      - Human-like and authentic
+      - Conversational flow
+      - No templates or patterns
+      - Genuine and straightforward
+    avoid: AI patterns, repetition, clichés
+
+# Content Type Processing Rules
+content_types:
+  readme:
+    primary_tone: "engaging"
+    rules:
+      - Make it scannable and clear
+      - Use active voice
+      - Lead with value proposition
+      - Remove marketing jargon
+    preserve: Technical accuracy, feature list accuracy
+    
+  email:
+    primary_tone: "professional"
+    rules:
+      - Clear purpose statement
+      - Conversational but formal
+      - Concise and direct
+      - Appropriate urgency level
+    preserve: Key information, dates, names, action items
+    
+  social_media:
+    primary_tone: "engaging"
+    rules:
+      - Authentic and relatable
+      - Concise and punchy
+      - Call-to-action clarity
+      - Personality and voice
+    preserve: Core message, hashtags if relevant, facts
+    
+  academic:
+    primary_tone: "professional"
+    rules:
+      - Precise terminology
+      - Logical flow
+      - Avoid colloquialism
+      - Maintain academic rigor
+    preserve: Citations, data, methodology, conclusions
+    
+  code_comment:
+    primary_tone: "technical"
+    rules:
+      - Clear and concise
+      - Explain why, not what (usually)
+      - No redundancy with code
+      - Appropriate detail level
+    preserve: All code logic and functionality
+    
+  documentation:
+    primary_tone: "professional"
+    rules:
+      - Clear structure
+      - Step-by-step clarity
+      - Consistent terminology
+      - Helpful examples
+    preserve: Accurate technical information, sequence
+    
+  marketing_copy:
+    primary_tone: "engaging"
+    rules:
+      - Benefit-focused
+      - Action-oriented
+      - Emotional resonance
+      - Clear differentiation
+    preserve: Factual claims, offers, deadlines
+
+# AI-Generated Pattern Dictionary
+ai_patterns:
+  overused_phrases:
+    - "state-of-the-art"
+    - "cutting-edge"
+    - "revolutionary"
+    - "comprehensive"
+    - "streamlined"
+    - "robust"
+    - "seamless"
+    - "innovative"
+    - "scalable"
+    - "maximize efficiency"
+    - "leverage"
+    - "facilitate"
+    - "optimize"
+    - "synergize"
+    - "paradigm shift"
+    - "utilize"
+    - "in order to"
+    - "aforementioned"
+    - "manifest"
+    - "it is noteworthy that"
+    - "take into consideration"
+    - "going forward"
+    - "at this point in time"
+    - "due to the fact that"
+    - "in the event that"
+  
+  sentence_starters:
+    - "It is important to note that..."
+    - "It is noteworthy that..."
+    - "This serves to..."
+    - "One could argue that..."
+    - "It has been found that..."
+    - "Research indicates that..."
+    - "Studies show that..."
+    - "The data suggests that..."
+  
+  filler_words:
+    - "obviously"
+    - "clearly"
+    - "remarkably"
+    - "significantly"
+    - "essentially"
+    - "practically"
+
+# Processing Steps
+processing_pipeline:
+  1_analyze:
+    - Identify content type
+    - Detect current tone
+    - Assess AI pattern density
+    - Identify key information to preserve
+  
+  2_extract_meaning:
+    - Extract core message
+    - Identify purpose
+    - Note important details
+    - Highlight factual content
+  
+  3_remove_ai_patterns:
+    - Replace overused phrases
+    - Rewrite sentence starters
+    - Remove filler words
+    - Simplify complex structures
+  
+  4_enhance_readability:
+    - Improve flow
+    - Use active voice (where appropriate)
+    - Shorten long sentences
+    - Add clarity and precision
+  
+  5_adapt_tone:
+    - Apply target tone characteristics
+    - Adjust formality level
+    - Match personality requirements
+    - Ensure consistency
+  
+  6_verify:
+    - Confirm original meaning preserved
+    - Check code functionality preserved (if applicable)
+    - Verify tone matches target
+    - Ensure no information lost
+    - Validate factual accuracy
+
+# Constraints & Limitations
+constraints:
+  - Never change code logic or functionality
+  - Never alter factual information
+  - Never add false claims
+  - Never remove critical information
+  - Preserve all technical accuracy
+  - Maintain original length roughly (±10%)
+  - Do not plagiarize or produce low-quality output
+
+# Quality Checklist
+quality_checklist:
+  - "Original meaning preserved?"
+  - "AI patterns removed?"
+  - "Tone appropriate for context?"
+  - "Readability enhanced?"
+  - "Code logic unchanged (if applicable)?"
+  - "Factual accuracy maintained?"
+  - "No information lost?"
+  - "Natural and authentic sounding?"
+  - "Appropriate for target audience?"
+
+# Default Configuration
+defaults:
+  default_tone: "natural"
+  default_content_type: "general"
+  preserve_code_functionality: true
+  preserve_logic: true
+  remove_ai_patterns: true
+  enhance_readability: true
+  remove_redundancy: true
+  target_audience: "general"
+  max_transformations: 1
+  preserve_original_structure: false
